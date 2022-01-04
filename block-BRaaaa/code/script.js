@@ -13,8 +13,6 @@ var allMovies = [
 ];
 
 input.addEventListener("keyup", (event) => {
-  console.log(event.keyCode);
-
   if (event.keyCode === 13) {
     console.log(event.target.value);
 
@@ -39,6 +37,12 @@ function handleChange(event) {
   allMovies[id].watched = !allMovies[id].watched;
 }
 
+// <!-- <li>
+// <input type="checkbox" class="style-checkbox" id="1" />
+// <label for="1"></label>
+// <span>X</span>
+// </li> -->
+
 function displayUI() {
   ulRoot.innerHTML = "";
   allMovies.forEach((elm, i) => {
@@ -52,10 +56,8 @@ function displayUI() {
     let label = document.createElement("label");
     label.innerText = elm.name;
     label.for = i;
-
     let span = document.createElement("span");
     span.innerText = "X";
-
     span.addEventListener("click", deleteMovie);
 
     li.append(input, label, span);
