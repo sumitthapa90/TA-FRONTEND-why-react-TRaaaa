@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Movie Watch List App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Movie Watch List App</h1>
+      <input type="text" placeholder="Enter a movie" />
+      <ul></ul>
+      <script
+        crossorigin
+        src="https://unpkg.com/react@17/umd/react.development.js"
+      ></script>
+      <script
+        crossorigin
+        src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      ></script>
+      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+      <script type="text/babel">
+        var input = document.querySelector("input");
+        var root = document.querySelector("ul");
+
+        var allMovies = [];
+
+        function handleDelete(event) {
+          var id = event.target.dataset.id;
+          allMovies.splice(id, 1);
+          displayMovie(allMovies, root);
+        }
+
+        function handleToggle(event) {
+          var id = event.target.dataset.id;
+          allMovies[id].isWatched = !allMovies[id].isWatched;
+          displayMovie(allMovies, root);
+        }
+
+        function displayMovie(allMovies = [], root) {
+          let ui = allMovies.map((elm, index) => {
+            return (
+              <li className="liClass">
+                <p className="name">{elm.name}</p>
+                <p>
+                  <span data-id={index} onClick={handleToggle}>
+                    {elm.isWatched ? "Watched" : "To Watch"}
+                  </span>
+                  <span data-id={index} onClick={handleDelete}>
+                    Remove
+                  </span>
+                </p>
+              </li>
+            );
+          });
+
+          ReactDOM.render(ui, root);
+        }
+
+        input.addEventListener("keyup", (event) => {
+          if (event.keyCode === 13 && event.target.value) {
+            allMovies.push({
+              name: event.target.value,
+              isWatched: false,
+            });
+
+            event.target.value = "";
+            displayMovie(allMovies, root);
+          }
+        });
+
+        displayMovie(allMovies, root);
+      </script>
+    </div>
+  </body>
+</html>
