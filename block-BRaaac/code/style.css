@@ -1,0 +1,11 @@
+.container {
+  margin: 0 auto;
+  text-align: center;
+  width: 500px;
+  background-color: orangered;
+}
+
+input{
+    padding: .5rem;
+    font-size: 1.5rem;
+}
