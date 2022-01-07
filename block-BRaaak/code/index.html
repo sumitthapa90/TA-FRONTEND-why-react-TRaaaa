@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Card Info</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/67e1179dc6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <main></main>
+    <body>
+        <!--Main-->
+        <header>
+          <h1>All Articles</h1>
+          <p>Collection of best articles on Stratups</p>
+        </header>
+        <main></main>
+        <script type="text/babel">
+          let main = document.querySelector('main');
+    
+          //   Components
+          let Card = (props) => {
+            return (
+              <div className="card flex-32">
+                <article>
+                  <div className="imgBox">
+                    <img
+                      className="full-width"
+                      src="https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+                      alt="Marusthal"
+                    />
+    
+                    <div className="photos">PHOTOS</div>
+                    <div className="date">
+                      <p>27</p>MAR
+                    </div>
+                  </div>
+                  <div>
+                    <h2>{props.name}</h2>
+                    <q>The city that never sleeps.</q>
+                    <p>
+                      New York, the largest city in the U.S., is an architectural
+                      marvel with plenty of historic monuments, magnificent
+                      buildings and countless dazzling skyscrapers.
+                    </p>
+                  </div>
+                  <div>
+                    <span>
+                      <i class="far fa-clock"></i> 6 minutes ago{' '}
+                    </span>
+                    <span>
+                      <i class="fas fa-comments"></i> 39 comments
+                    </span>
+                  </div>
+                </article>
+              </div>
+            );
+          };
+    
+          let cards = (
+            <>
+              <Card name="City Lights in New York" />
+              <Card name="Mumbai the city of Dreams" />
+              <Card name="Kashmir Heaven on Earth" />
+            </>
+          );
+
+         
+    
+          ReactDOM.render(cards, main);
+        </script>
+      </body>
+    
+</html>
