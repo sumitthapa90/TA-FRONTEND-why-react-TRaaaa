@@ -19,71 +19,90 @@
       src="https://kit.fontawesome.com/67e1179dc6.js"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/67e1179dc6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
+    <header>
+      <h1>All Articles</h1>
+      <h3>Collections of best articles on Startups</h3>
+    </header>
     <main></main>
-    <body>
-        <!--Main-->
-        <header>
-          <h1>All Articles</h1>
-          <p>Collection of best articles on Stratups</p>
-        </header>
-        <main></main>
-        <script type="text/babel">
-          let main = document.querySelector('main');
-    
-          //   Components
-          let Card = (props) => {
-            return (
-              <div className="card flex-32">
-                <article>
-                  <div className="imgBox">
-                    <img
-                      className="full-width"
-                      src="https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-                      alt="Marusthal"
-                    />
-    
-                    <div className="photos">PHOTOS</div>
-                    <div className="date">
-                      <p>27</p>MAR
-                    </div>
-                  </div>
-                  <div>
-                    <h2>{props.name}</h2>
-                    <q>The city that never sleeps.</q>
-                    <p>
-                      New York, the largest city in the U.S., is an architectural
-                      marvel with plenty of historic monuments, magnificent
-                      buildings and countless dazzling skyscrapers.
-                    </p>
-                  </div>
-                  <div>
-                    <span>
-                      <i class="far fa-clock"></i> 6 minutes ago{' '}
-                    </span>
-                    <span>
-                      <i class="fas fa-comments"></i> 39 comments
-                    </span>
-                  </div>
-                </article>
-              </div>
-            );
-          };
-    
-          let cards = (
-            <>
-              <Card name="City Lights in New York" />
-              <Card name="Mumbai the city of Dreams" />
-              <Card name="Kashmir Heaven on Earth" />
-            </>
-          );
 
-         
-    
-          ReactDOM.render(cards, main);
-        </script>
-      </body>
-    
+    <script type="text/babel">
+      let articles = [
+        {
+          title: "City Lights in New York",
+          date: new Date("2017-01-26"),
+          comments: 67,
+          subTitle: "The city that never sleeps.",
+          description:
+            "New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.",
+          category: "photos",
+          imageURL:
+            "https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        },
+      ];
+
+      var main = document.querySelector("main");
+
+      var Card = (props) => {
+        return (
+          <div className="card ">
+            <article>
+              <div className="imageBox">
+                <img
+                  className="cardImage"
+                  src="https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+                  alt="Marusthal"
+                />
+
+                <div className="photos">PHOTO</div>
+                <div className="date">
+                  <p>27</p>Mar
+                </div>
+              </div>
+
+              <section>
+                <h2>{props.name}</h2>
+                <q>The city thats never sleep</q>
+                <p className="para">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Molestias consequuntur inventore praesentium nobis dolor! Qui
+                  minima libero voluptatum doloremque debitis!
+                </p>
+              </section>
+
+              <div>
+                <span>
+                  <i class="far fa-clock"></i> 6 minutes ago
+                </span>
+                <span>
+                  <i class="fas fa-comments"></i> 39 comments
+                </span>
+              </div>
+            </article>
+          </div>
+        );
+      };
+
+      let cards = (
+        <>
+          <Card name="City Lights in New York" />
+          <Card name="Mumbai the city of Dreams" />
+          <Card name="Kashmir Heaven on Earth" />
+        </>
+      );
+      ReactDOM.render(cards, main);
+    </script>
+  </body>
 </html>
