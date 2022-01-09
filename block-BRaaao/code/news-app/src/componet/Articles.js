@@ -1,9 +1,10 @@
+import allArticles from "../data/articles";
+
 function Articles() {
   return (
     <>
       <Article title="Sumit" />
       <Article title="Sumit" />
-     
     </>
   );
 }
