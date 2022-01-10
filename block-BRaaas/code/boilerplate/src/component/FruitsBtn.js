@@ -1,26 +1,32 @@
-let fruits = [
-  { id: "apple", value: "🍎 apple" },
-  { id: "orange", value: "🍊 orange" },
-  { id: "grape", value: "🍇 grape" },
-  { id: "pear", value: "🍐 pear" },
-];
-
-function handleClick(name) {
-  alert(name);
-}
-
-function Btn(props) {
-  return <button onClick={() => handleClick(props.id)}>{props.value}</button>;
-}
-
 function FruitsBtn() {
-  return (
-    <div>
-      {fruits.map((fruit, i) => (
-        <Btn key={i} {...fruit} />
-      ))}
-    </div>
-  );
+  let fruits = [
+    { id: "apple", value: "🍎 apple" },
+    { id: "orange", value: "🍊 orange" },
+    { id: "grape", value: "🍇 grape" },
+    { id: "pear", value: "🍐 pear" },
+  ];
+
+  return fruits.map((fruit) => (
+    <button
+      key={fruit.id}
+      onClick={() => {
+        alert(`${fruit.value}`);
+      }}
+    >
+      {fruit.value}
+    </button>
+  ));
+
+  // return fruits.map((fruit) => (
+  //   <button
+  //     key={fruit.id}
+  //     onClick={() => {
+  //       alert(`${fruit.value}`);
+  //     }}
+  //   >
+  //     {fruit.value}
+  //   </button>
+  // ));
 }
 
 export default FruitsBtn;
